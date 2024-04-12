@@ -4,7 +4,7 @@ Parser for get teams and players stat by event and export it to google sheets an
 
 ## Setup and run
 
-1. CLone project: 
+1. Clone project: 
     ```bash
     git clone https://github.com/FlakeV/HLTVEventParser.git
     ```

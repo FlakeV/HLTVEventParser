@@ -35,7 +35,6 @@ JSON_HEADERS = [
     'HLTV_2.0',
 ]
 
-
 class GoogleSheet:
     # empty sheets
     player_sheet = None

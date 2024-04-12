@@ -1,7 +1,11 @@
+from typing import Generator
+
+from google_sheets.google_sheet_int import GoogleSheet
 from utils.html_parsed_page import get_parsed_html, BASE_URL
+from utils.time_checker import track_time
 
 
-def side_generator():
+def side_generator() -> Generator[str, None, None]:
     sides = ['all', 'ct', 't']
     i = 0
     while True:
@@ -12,7 +16,8 @@ def side_generator():
             i += 1
 
 
-def get_match_data(match_id: int, gs):
+@track_time
+def save_match_data(match_id: int, gs: GoogleSheet) -> None:
     url = f'{BASE_URL}/matches/{match_id}/page'
 
     bs_event_teams = get_parsed_html(url)
@@ -38,7 +43,3 @@ def get_match_data(match_id: int, gs):
                         player_stat.append(cell.text.strip())
                 rows_to_write.append([csmap, side, team] + player_stat)
     gs.add_rows(rows_to_write)
-
-
-def save_match_data(match_id, gs):
-    get_match_data(match_id, gs)

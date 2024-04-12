@@ -3,7 +3,9 @@ from typing import TypedDict
 
 from tqdm import tqdm
 
+from google_sheets.google_sheet_int import GoogleSheet
 from utils.html_parsed_page import get_parsed_html, BASE_URL
+from utils.time_checker import track_time
 
 
 class Team(TypedDict):
@@ -62,7 +64,7 @@ def get_team_players_and_save_stat(teams: List[Team], gs) -> List[Player]:
     return players
 
 
-def save_player_stat(players, gs):
+def save_player_stat(players: List[Player], gs: GoogleSheet) -> None:
     players_rows = []
 
     for player in tqdm(players, desc='Players', dynamic_ncols=True):
@@ -101,8 +103,8 @@ def save_player_stat(players, gs):
 
     gs.add_rows(players_rows)
 
-
-def save_team_player_stat(event_id: int, gs):
+@track_time
+def save_team_player_stat(event_id: int, gs: GoogleSheet) -> None:
     teams = get_teams_on_event(event_id)
     players = get_team_players_and_save_stat(teams, gs)
     save_player_stat(players, gs)

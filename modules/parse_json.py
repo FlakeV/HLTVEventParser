@@ -3,6 +3,7 @@ from typing import Dict, List
 
 from google_sheets.google_sheet_int import GoogleSheet
 from config.settings import Settings
+from utils.time_checker import track_time
 
 
 def dict_to_list(data: Dict) -> List:
@@ -23,6 +24,7 @@ def parse_json_file(filename: str) -> List[Dict]:
         return json.load(f)
 
 
+@track_time
 def export_data_from_json(gs: GoogleSheet) -> None:
     json_filename = Settings.json_file_name
     json_file_path = Settings.json_file_path
