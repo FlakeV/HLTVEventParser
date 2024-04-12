@@ -2,7 +2,7 @@ import json
 from typing import Dict, List
 
 from google_sheets.google_sheet_int import GoogleSheet
-from settings import Settings
+from config.settings import Settings
 
 
 def dict_to_list(data: Dict) -> List:

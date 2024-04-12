@@ -3,7 +3,7 @@ from typing import TypedDict
 
 from tqdm import tqdm
 
-from utils import get_parsed_html, BASE_URL
+from utils.html_parsed_page import get_parsed_html, BASE_URL
 
 
 class Team(TypedDict):

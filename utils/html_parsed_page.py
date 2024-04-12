@@ -4,7 +4,7 @@ import time
 import requests
 from bs4 import BeautifulSoup
 
-from settings import Settings
+from config.settings import Settings
 
 headers = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 YaBrowser/23.5.2.625 Yowser/2.5 Safari/537.36',
