@@ -1,10 +1,9 @@
-import time
 from typing import List, Any
 
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-from settings import Settings
+from config.settings import Settings
 
 TEAMS_HEADERS = [
     'team_name',

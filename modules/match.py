@@ -1,4 +1,4 @@
-from utils import get_parsed_html, BASE_URL
+from utils.html_parsed_page import get_parsed_html, BASE_URL
 
 
 def side_generator():
