@@ -27,8 +27,8 @@ PLAYERS_HEADERS = [
 ]
 
 JSON_HEADERS = [
-    'Nickname',
     'Team',
+    'Nickname',
     'Kills',
     'Deaths',
     'adr',

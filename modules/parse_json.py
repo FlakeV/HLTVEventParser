@@ -7,8 +7,8 @@ from settings import Settings
 
 def dict_to_list(data: Dict) -> List:
     return [
-        data['Nickname'],
         data['Team'],
+        data['Nickname'],
         data['Kills'],
         data['Deaths'],
         data['Assists'],
