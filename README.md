@@ -1,6 +1,6 @@
 # HLTVEventParser
 
-Parser for get teams and players stat by event and export it to google sheets and csv files
+Parser for get teams and players stat by event and export it to google sheets
 
 ## Setup and run
 
